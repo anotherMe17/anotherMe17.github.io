@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://anotherme17.github.io/"/>
-  <updated>2017-02-16T10:26:09.740Z</updated>
+  <updated>2017-02-21T13:12:04.098Z</updated>
   <id>https://anotherme17.github.io/</id>
   
   <author>
@@ -14,6 +14,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>AndroidStudio模板</title>
+    <link href="https://anotherme17.github.io/2017/02/21/AndroidStudio%E6%A8%A1%E6%9D%BF/"/>
+    <id>https://anotherme17.github.io/2017/02/21/AndroidStudio模板/</id>
+    <published>2017-02-21T13:04:18.000Z</published>
+    <updated>2017-02-21T13:12:04.098Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://img.blog.csdn.net/20160429132644449&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+    
+    </summary>
+    
+      <category term="AndroidStudio实用技巧" scheme="https://anotherme17.github.io/categories/AndroidStudio%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7/"/>
+    
+    
+      <category term="AndroidStudio" scheme="https://anotherme17.github.io/tags/AndroidStudio/"/>
+    
+      <category term="实用技巧" scheme="https://anotherme17.github.io/tags/%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7/"/>
+    
+  </entry>
   
   <entry>
     <title>Tools</title>
