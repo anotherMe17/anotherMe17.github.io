@@ -148,7 +148,33 @@
 
   </section>
   <section class="article typo">
-	  <p><img src="http://img.blog.csdn.net/20160429132644449" alt=""></p>
+	  <p>为了方便实用，AndroidStudio可以自定义实用模板。模板分为两种，一种是<strong>Live Template</strong>，另一种是<strong>File Template</strong></p>
+<h2 id="Live-Template"><a href="#Live-Template" class="headerlink" title="Live Template"></a>Live Template</h2><p>这种模板用法就是输入特定字符，按下Tab键即可</p>
+<h3 id="Live-Template示例"><a href="#Live-Template示例" class="headerlink" title="Live Template示例"></a>Live Template示例</h3><p>在方法中输入“Toast”并按下Tab键</p>
+<p><img src="http://img.blog.csdn.net/20160429132644449" alt=""></p>
+<p>对一个对象的判空/非空语句写法</p>
+<p><img src="http://img.blog.csdn.net/20160429102024730" alt=""></p>
+<h3 id="自定义Live-Template"><a href="#自定义Live-Template" class="headerlink" title="自定义Live Template"></a>自定义Live Template</h3><p>Settings &gt; Editor &gt; Live Templates 进入<strong>Live Template</strong> 设置界面</p>
+<p><img src="http://img.blog.csdn.net/20160429102100735" alt=""></p>
+<p>创建一个自定义的Live Template</p>
+<p><img src="http://img.blog.csdn.net/20160429102118231" alt=""></p>
+<h2 id="File-Template"><a href="#File-Template" class="headerlink" title="File Template"></a>File Template</h2><p>File Template是在创建类时用到的模板，包括类的注释</p>
+<p>如图 <img src="http://img.blog.csdn.net/20160429102138435" alt=""></p>
+<h3 id="举个栗子"><a href="#举个栗子" class="headerlink" title="举个栗子"></a>举个栗子</h3><p>这里举个AndroidStudio自带的饿汉单例例子</p>
+<pre><code>#if (${PACKAGE_NAME} &amp;&amp; ${PACKAGE_NAME} != &quot;&quot;)package ${PACKAGE_NAME};#end
+#parse(&quot;File Header.java&quot;)
+public class ${NAME}{
+private static ${NAME} ourInstance = new ${NAME}();
+
+public static ${NAME} getInstance() {
+return ourInstance;
+}
+
+private ${NAME}() {
+}
+}
+</code></pre><h3 id="使用自己创建的模板"><a href="#使用自己创建的模板" class="headerlink" title="使用自己创建的模板"></a>使用自己创建的模板</h3><p>在创建类时可以选择自己新建的模板</p>
+<p><img src="http://img.blog.csdn.net/20160429102237517" alt=""></p>
 
 
     
@@ -201,6 +227,8 @@
     
     <ul class="entry">
     
+        <li><a class="flat-box" href="/categories/Android/"><div class='name'>Android</div><div class='badget'>1</div></a></li>
+    
         <li><a class="flat-box" href="/categories/AndroidStudio实用技巧/"><div class='name'>AndroidStudio实用技巧</div><div class='badget'>1</div></a></li>
     
         <li><a class="flat-box" href="/categories/收藏/"><div class='name'>收藏</div><div class='badget'>1</div></a></li>
@@ -214,7 +242,7 @@
 <div class="m_widget tagcloud">
     <div class="header">Tags</div>
     <div class='content'>
-        <a href="/tags/AndroidStudio/" style="font-size: 14px; color: #808080">AndroidStudio</a> <a href="/tags/实用技巧/" style="font-size: 14px; color: #808080">实用技巧</a> <a href="/tags/工具/" style="font-size: 14px; color: #808080">工具</a> <a href="/tags/网站/" style="font-size: 14px; color: #808080">网站</a>
+        <a href="/tags/Android/" style="font-size: 14px; color: #808080">Android</a> <a href="/tags/AndroidStudio/" style="font-size: 14px; color: #808080">AndroidStudio</a> <a href="/tags/Android数据储存/" style="font-size: 14px; color: #808080">Android数据储存</a> <a href="/tags/实用技巧/" style="font-size: 14px; color: #808080">实用技巧</a> <a href="/tags/工具/" style="font-size: 14px; color: #808080">工具</a> <a href="/tags/网站/" style="font-size: 14px; color: #808080">网站</a>
     </div>
 </div>
 

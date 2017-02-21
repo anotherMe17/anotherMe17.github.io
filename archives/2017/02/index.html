@@ -133,6 +133,56 @@
   <section class="meta">
     
     <h2 class="title">
+      <a href="/2017/02/21/SharedPreferences/">
+        Android数据储存-SharedPreferences
+      </a>
+    </h2>
+    
+    <time>
+      2月 21, 2017
+    </time>
+		
+    
+    <div class='cats'>
+        <a href="/categories/Android/">Android</a>
+    </div>
+
+  </section>
+  <section class="article typo">
+	  <h2 id="获取SharedPreferences"><a href="#获取SharedPreferences" class="headerlink" title="获取SharedPreferences"></a>获取SharedPreferences</h2><p>获取SharedPreferences有两种方式:</p>
+<p>1 调用Context对象的getSharedPreferences()方法<br>2 调用Activity对象的getPreferences()方法</p>
+<p>两种方式的区别:</p>
+<p>调用Context对象的getSharedPreferences()方法获得的SharedPreferences对象可以被同一应用程序下的其他组件共享.</p>
+<p>调用Activity对象的getPreferences()方法获得的SharedPreferences对象只能在该Activity中使用.</p>
+<h2 id="SharedPreferences的四种操作模式"><a href="#SharedPreferences的四种操作模式" class="headerlink" title="SharedPreferences的四种操作模式"></a>SharedPreferences的四种操作模式</h2><ul>
+<li>Context.MODE_PRIVATE：为默认操作模式,代表该文件是私有数据,只能被应用本身访问,在该模式下,写入的内容会覆盖原文件的内容</li>
+<li>Context.MODE_APPEND：模式会检查文件是否存在,存在就往文件追加内容,否则就创建新文件.</li>
+<li>Context.MODE_WORLD_READABLE和Context.MODE_WORLD_WRITEABLE用来控制其他应用是否有权限读写该文件.</li>
+<li>MODE_WORLD_READABLE：表示当前文件可以被其他应用读取.</li>
+<li>MODE_WORLD_WRITEABLE：表示当前文件可以被其他应用写入.</li>
+</ul>
+
+
+    
+    
+    
+	  <div class="full-width auto-padding tags">
+      
+        <a href="/tags/Android/">Android</a>
+      
+        <a href="/tags/Android数据储存/">Android数据储存</a>
+      
+	  </div>
+    
+  </section>
+</article>
+    </div>
+  
+    <div class='post-wrapper'>
+      <article class="post reveal">
+  <section class="meta">
+    
+    <h2 class="title">
       <a href="/2017/02/21/AndroidStudio模板/">
         AndroidStudio模板
       </a>
@@ -149,7 +199,33 @@
 
   </section>
   <section class="article typo">
-	  <p><img src="http://img.blog.csdn.net/20160429132644449" alt=""></p>
+	  <p>为了方便实用，AndroidStudio可以自定义实用模板。模板分为两种，一种是<strong>Live Template</strong>，另一种是<strong>File Template</strong></p>
+<h2 id="Live-Template"><a href="#Live-Template" class="headerlink" title="Live Template"></a>Live Template</h2><p>这种模板用法就是输入特定字符，按下Tab键即可</p>
+<h3 id="Live-Template示例"><a href="#Live-Template示例" class="headerlink" title="Live Template示例"></a>Live Template示例</h3><p>在方法中输入“Toast”并按下Tab键</p>
+<p><img src="http://img.blog.csdn.net/20160429132644449" alt=""></p>
+<p>对一个对象的判空/非空语句写法</p>
+<p><img src="http://img.blog.csdn.net/20160429102024730" alt=""></p>
+<h3 id="自定义Live-Template"><a href="#自定义Live-Template" class="headerlink" title="自定义Live Template"></a>自定义Live Template</h3><p>Settings &gt; Editor &gt; Live Templates 进入<strong>Live Template</strong> 设置界面</p>
+<p><img src="http://img.blog.csdn.net/20160429102100735" alt=""></p>
+<p>创建一个自定义的Live Template</p>
+<p><img src="http://img.blog.csdn.net/20160429102118231" alt=""></p>
+<h2 id="File-Template"><a href="#File-Template" class="headerlink" title="File Template"></a>File Template</h2><p>File Template是在创建类时用到的模板，包括类的注释</p>
+<p>如图 <img src="http://img.blog.csdn.net/20160429102138435" alt=""></p>
+<h3 id="举个栗子"><a href="#举个栗子" class="headerlink" title="举个栗子"></a>举个栗子</h3><p>这里举个AndroidStudio自带的饿汉单例例子</p>
+<pre><code>#if (${PACKAGE_NAME} &amp;&amp; ${PACKAGE_NAME} != &quot;&quot;)package ${PACKAGE_NAME};#end
+#parse(&quot;File Header.java&quot;)
+public class ${NAME}{
+private static ${NAME} ourInstance = new ${NAME}();
+
+public static ${NAME} getInstance() {
+return ourInstance;
+}
+
+private ${NAME}() {
+}
+}
+</code></pre><h3 id="使用自己创建的模板"><a href="#使用自己创建的模板" class="headerlink" title="使用自己创建的模板"></a>使用自己创建的模板</h3><p>在创建类时可以选择自己新建的模板</p>
+<p><img src="http://img.blog.csdn.net/20160429102237517" alt=""></p>
 
 
     
@@ -243,6 +319,8 @@
     
     <ul class="entry">
     
+        <li><a class="flat-box" href="/categories/Android/"><div class='name'>Android</div><div class='badget'>1</div></a></li>
+    
         <li><a class="flat-box" href="/categories/AndroidStudio实用技巧/"><div class='name'>AndroidStudio实用技巧</div><div class='badget'>1</div></a></li>
     
         <li><a class="flat-box" href="/categories/收藏/"><div class='name'>收藏</div><div class='badget'>1</div></a></li>
@@ -256,7 +334,7 @@
 <div class="m_widget tagcloud">
     <div class="header">Tags</div>
     <div class='content'>
-        <a href="/tags/AndroidStudio/" style="font-size: 14px; color: #808080">AndroidStudio</a> <a href="/tags/实用技巧/" style="font-size: 14px; color: #808080">实用技巧</a> <a href="/tags/工具/" style="font-size: 14px; color: #808080">工具</a> <a href="/tags/网站/" style="font-size: 14px; color: #808080">网站</a>
+        <a href="/tags/Android/" style="font-size: 14px; color: #808080">Android</a> <a href="/tags/AndroidStudio/" style="font-size: 14px; color: #808080">AndroidStudio</a> <a href="/tags/Android数据储存/" style="font-size: 14px; color: #808080">Android数据储存</a> <a href="/tags/实用技巧/" style="font-size: 14px; color: #808080">实用技巧</a> <a href="/tags/工具/" style="font-size: 14px; color: #808080">工具</a> <a href="/tags/网站/" style="font-size: 14px; color: #808080">网站</a>
     </div>
 </div>
 

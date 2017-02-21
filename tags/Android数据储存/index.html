@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>Tag: 网站 | AnotherMe17</title>
+  <title>Tag: Android数据储存 | AnotherMe17</title>
   <meta name="description" content="AnotherMe17" />
   <meta name="keywords" content="Android,Java" />
   <meta name="HandheldFriendly" content="True" />
@@ -15,7 +15,7 @@
   <meta name="description" content="AnotherMe17">
 <meta property="og:type" content="website">
 <meta property="og:title" content="AnotherMe17">
-<meta property="og:url" content="https://anotherme17.github.io/tags/网站/index.html">
+<meta property="og:url" content="https://anotherme17.github.io/tags/Android数据储存/index.html">
 <meta property="og:site_name" content="AnotherMe17">
 <meta property="og:description" content="AnotherMe17">
 <meta name="twitter:card" content="summary">
@@ -122,7 +122,7 @@
       <div class='l_main'>
         
 	<section class="page-header tag banner waves-image">
-    <h1>Tag : <span>网站</span></h1>
+    <h1>Tag : <span>Android数据储存</span></h1>
   </section>
 
 <section class="post-list">
@@ -132,24 +132,34 @@
   <section class="meta">
     
     <h2 class="title">
-      <a href="/2017/02/16/Tools/">
-        Tools
+      <a href="/2017/02/21/SharedPreferences/">
+        Android数据储存-SharedPreferences
       </a>
     </h2>
     
     <time>
-      2月 16, 2017
+      2月 21, 2017
     </time>
 		
     
     <div class='cats'>
-        <a href="/categories/收藏/">收藏</a>
+        <a href="/categories/Android/">Android</a>
     </div>
 
   </section>
   <section class="article typo">
-	  <h2 id="图片相关工具"><a href="#图片相关工具" class="headerlink" title="图片相关工具"></a>图片相关工具</h2><p>处理图片相关的工具网站</p>
-<h3 id="png转ico"><a href="#png转ico" class="headerlink" title="png转ico"></a>png转ico</h3><p><a href="http://www.easyicon.net/covert/" target="_blank" rel="external">icovert</a><br>可以把png格式的图片转换成ico,有16,32,48,64,96,128,256,512,八种尺寸</p>
+	  <h2 id="获取SharedPreferences"><a href="#获取SharedPreferences" class="headerlink" title="获取SharedPreferences"></a>获取SharedPreferences</h2><p>获取SharedPreferences有两种方式:</p>
+<p>1 调用Context对象的getSharedPreferences()方法<br>2 调用Activity对象的getPreferences()方法</p>
+<p>两种方式的区别:</p>
+<p>调用Context对象的getSharedPreferences()方法获得的SharedPreferences对象可以被同一应用程序下的其他组件共享.</p>
+<p>调用Activity对象的getPreferences()方法获得的SharedPreferences对象只能在该Activity中使用.</p>
+<h2 id="SharedPreferences的四种操作模式"><a href="#SharedPreferences的四种操作模式" class="headerlink" title="SharedPreferences的四种操作模式"></a>SharedPreferences的四种操作模式</h2><ul>
+<li>Context.MODE_PRIVATE：为默认操作模式,代表该文件是私有数据,只能被应用本身访问,在该模式下,写入的内容会覆盖原文件的内容</li>
+<li>Context.MODE_APPEND：模式会检查文件是否存在,存在就往文件追加内容,否则就创建新文件.</li>
+<li>Context.MODE_WORLD_READABLE和Context.MODE_WORLD_WRITEABLE用来控制其他应用是否有权限读写该文件.</li>
+<li>MODE_WORLD_READABLE：表示当前文件可以被其他应用读取.</li>
+<li>MODE_WORLD_WRITEABLE：表示当前文件可以被其他应用写入.</li>
+</ul>
 
 
     
@@ -157,9 +167,9 @@
     
 	  <div class="full-width auto-padding tags">
       
-        <a href="/tags/网站/">网站</a>
+        <a href="/tags/Android/">Android</a>
       
-        <a href="/tags/工具/">工具</a>
+        <a href="/tags/Android数据储存/">Android数据储存</a>
       
 	  </div>
     

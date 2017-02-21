@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://anotherme17.github.io/"/>
-  <updated>2017-02-21T13:12:04.098Z</updated>
+  <updated>2017-02-21T14:32:54.012Z</updated>
   <id>https://anotherme17.github.io/</id>
   
   <author>
@@ -16,16 +16,38 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Android数据储存-SharedPreferences</title>
+    <link href="https://anotherme17.github.io/2017/02/21/SharedPreferences/"/>
+    <id>https://anotherme17.github.io/2017/02/21/SharedPreferences/</id>
+    <published>2017-02-21T14:26:34.000Z</published>
+    <updated>2017-02-21T14:32:54.012Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;获取SharedPreferences&quot;&gt;&lt;a href=&quot;#获取SharedPreferences&quot; class=&quot;headerlink&quot; title=&quot;获取SharedPreferences&quot;&gt;&lt;/a&gt;获取SharedPreferences&lt;/h2&gt;&lt;p&gt;获取
+    
+    </summary>
+    
+      <category term="Android" scheme="https://anotherme17.github.io/categories/Android/"/>
+    
+    
+      <category term="Android" scheme="https://anotherme17.github.io/tags/Android/"/>
+    
+      <category term="Android数据储存" scheme="https://anotherme17.github.io/tags/Android%E6%95%B0%E6%8D%AE%E5%82%A8%E5%AD%98/"/>
+    
+  </entry>
+  
+  <entry>
     <title>AndroidStudio模板</title>
     <link href="https://anotherme17.github.io/2017/02/21/AndroidStudio%E6%A8%A1%E6%9D%BF/"/>
     <id>https://anotherme17.github.io/2017/02/21/AndroidStudio模板/</id>
     <published>2017-02-21T13:04:18.000Z</published>
-    <updated>2017-02-21T13:12:04.098Z</updated>
+    <updated>2017-02-21T13:46:56.041Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;http://img.blog.csdn.net/20160429132644449&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-
+      &lt;p&gt;为了方便实用，AndroidStudio可以自定义实用模板。模板分为两种，一种是&lt;strong&gt;Live Template&lt;/strong&gt;，另一种是&lt;strong&gt;File Template&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;Live-Template&quot;&gt;&lt;a h
     
     </summary>
     
