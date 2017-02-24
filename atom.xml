@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://anotherme17.github.io/"/>
-  <updated>2017-02-21T14:32:54.012Z</updated>
+  <updated>2017-02-24T07:11:40.102Z</updated>
   <id>https://anotherme17.github.io/</id>
   
   <author>
@@ -14,6 +14,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>AndroidStudio发布项目到JCenter</title>
+    <link href="https://anotherme17.github.io/2017/02/24/AndroidStudio%E5%8F%91%E5%B8%83%E4%B8%80%E4%B8%AA%E9%A1%B9%E7%9B%AE%E5%88%B0Jcenter/"/>
+    <id>https://anotherme17.github.io/2017/02/24/AndroidStudio发布一个项目到Jcenter/</id>
+    <published>2017-02-24T06:53:13.000Z</published>
+    <updated>2017-02-24T07:11:40.102Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文将介绍如何把你写的包发布到&lt;a href=&quot;https://bintray.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Bintray&lt;/a&gt;上  &lt;/p&gt;
+&lt;p&gt;注册账号和生成Maven库的步骤省略，过程比较简单可以自行上网百度&lt;/p&gt;
+
+    
+    </summary>
+    
+      <category term="AndroidStudio实用技巧" scheme="https://anotherme17.github.io/categories/AndroidStudio%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7/"/>
+    
+    
+      <category term="AndroidStudio" scheme="https://anotherme17.github.io/tags/AndroidStudio/"/>
+    
+      <category term="JCenter" scheme="https://anotherme17.github.io/tags/JCenter/"/>
+    
+      <category term="实用技巧" scheme="https://anotherme17.github.io/tags/%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7/"/>
+    
+  </entry>
   
   <entry>
     <title>Android数据储存-SharedPreferences</title>
