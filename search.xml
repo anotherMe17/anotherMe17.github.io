@@ -9,12 +9,14 @@
       <content type="html"><![CDATA[<p>本文将介绍如何把你写的包发布到<a href="https://bintray.com/" target="_blank" rel="external">Bintray</a>上  </p>
 <p>注册账号和生成Maven库的步骤省略，过程比较简单可以自行上网百度</p>
 <h2 id="主项目的gradle的配置"><a href="#主项目的gradle的配置" class="headerlink" title="主项目的gradle的配置"></a>主项目的gradle的配置</h2><p>上传的插件用的是 com.novoda:bintray-release:0.3.4 </p>
+<a id="more"></a>
 <p>如果项目中包含中文注释或中文字符，最好添加以下代码，不然中文注释的地方会报错导致编译不能通过。  </p>
 <pre><code>tasks.withType(Javadoc) {
     options.addStringOption(&apos;Xdoclint:none&apos;, &apos;-quiet&apos;)
     options.addStringOption(&apos;encoding&apos;, &apos;UTF-8&apos;)
 }
 </code></pre><p>Gradle整体配置</p>
+<!-- more -->
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">buildscript &#123;</div><div class="line">    repositories &#123;</div><div class="line">        jcenter()</div><div class="line">    &#125;</div><div class="line">    dependencies &#123;</div><div class="line">        classpath <span class="string">'com.android.tools.build:gradle:2.1.0'</span></div><div class="line">        classpath <span class="string">'com.novoda:bintray-release:0.3.4'</span></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">allprojects &#123;</div><div class="line">    repositories &#123;</div><div class="line">        jcenter()</div><div class="line">    &#125;</div><div class="line">    tasks.withType(Javadoc) &#123;</div><div class="line">        options.addStringOption(<span class="string">'Xdoclint:none'</span>, <span class="string">'-quiet'</span>)</div><div class="line">        options.addStringOption(<span class="string">'encoding'</span>, <span class="string">'UTF-8'</span>)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="function">task <span class="title">clean</span><span class="params">(type: Delete)</span> </span>&#123;</div><div class="line">    delete rootProject.buildDir</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="Module的Gradle配置"><a href="#Module的Gradle配置" class="headerlink" title="Module的Gradle配置"></a>Module的Gradle配置</h2><h3 id="添加插件"><a href="#添加插件" class="headerlink" title="添加插件"></a>添加插件</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">apply plugin: <span class="string">'maven'</span></div><div class="line">apply plugin: <span class="string">'com.novoda.bintray-release'</span></div></pre></td></tr></table></figure>
 <h3 id="添加注释"><a href="#添加注释" class="headerlink" title="添加注释"></a>添加注释</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">publish &#123;</div><div class="line">    userOrg = <span class="string">'anotherme17'</span><span class="comment">//bintray.com用户名</span></div><div class="line">    groupId = <span class="string">'com.anotherme17'</span><span class="comment">//jcenter上的路径</span></div><div class="line">    artifactId = <span class="string">'common-adapter'</span><span class="comment">//项目名称</span></div><div class="line">    publishVersion = <span class="string">'0.0.1'</span><span class="comment">//版本号</span></div><div class="line">    desc = <span class="string">'An CommonAdapter for ListView or RecyclerView'</span><span class="comment">//描述，不重要</span></div><div class="line">    website = <span class="string">'https://github.com/anotherMe17/CommonAdapterSample'</span></div><div class="line">    <span class="comment">//网站，不重要；尽量模拟github上的地址，例如我这样的；当然你有地址最好了</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -36,9 +38,9 @@
             
             <tag> AndroidStudio </tag>
             
-            <tag> 实用技巧 </tag>
-            
             <tag> JCenter </tag>
+            
+            <tag> 实用技巧 </tag>
             
         </tags>
         
@@ -87,6 +89,7 @@
 <p><img src="http://img.blog.csdn.net/20160429132644449" alt=""></p>
 <p>对一个对象的判空/非空语句写法</p>
 <p><img src="http://img.blog.csdn.net/20160429102024730" alt=""></p>
+<a id="more"></a>
 <h3 id="自定义Live-Template"><a href="#自定义Live-Template" class="headerlink" title="自定义Live Template"></a>自定义Live Template</h3><p>Settings &gt; Editor &gt; Live Templates 进入<strong>Live Template</strong> 设置界面</p>
 <p><img src="http://img.blog.csdn.net/20160429102100735" alt=""></p>
 <p>创建一个自定义的Live Template</p>

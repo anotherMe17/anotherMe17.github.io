@@ -88,9 +88,9 @@ var customSearch;
 		Waves.attach('.waves-image');
 		Waves.init();
 	}
-	function setScrollReveal(){
+	function setScrollReveal() {
 		const $reveal = $('.reveal');
-		if($reveal.length === 0) return; 
+		if ($reveal.length === 0) return;
 		const sr = ScrollReveal();
 		sr.reveal('.reveal');
 	}
@@ -138,29 +138,63 @@ var customSearch;
 	}
 
 	function getPicture() {
+		if (BANNER_IMAGE) {
+			if (BANNER_CUSTOMIMAGE) {
+				getListImage();
+			} else {
+				getLovewallpaper();
+			}
+		} else {
+			setNoimageBanner();
+		}
+	}
+
+	function getListImage() {
 		const $banner = $('.banner');
 		if ($banner.length === 0) return;
-		const url = ROOT + 'js/lovewallpaper.json';
+		if (BANNER_IMAGELIST.length > 0) {
+			const index = Math.floor(Math.random() * BANNER_IMAGELIST.length);
+			$banner.css('background-image', 'url(' + BANNER_IMAGELIST[index] + ')');
+		}
+	}
+
+	function getLovewallpaper() {
+		const $banner = $('.banner');
+		if ($banner.length === 0) return;
+		/*动态获取bing 图片*/
+		$banner.css('background-image', 'url(' + 'https://www.dujin.org/sys/bing/1366.php' + ')');
+		/*const url = ROOT + 'js/lovewallpaper.json';
 		$.get(url).done(res => {
 			if (res.data.length > 0) {
 				const index = Math.floor(Math.random() * res.data.length);
 				$banner.css('background-image', 'url(' + res.data[index].big + ')');
 			}
-		})
+		})*/
+	}
+
+	function setNoimageBanner() {
+		const $banner = $('.banner');
+		if ($banner.length === 0) return;
+		$banner.addClass('noimage');
 	}
 
 	function getHitokoto() {
 		const $hitokoto = $('#hitokoto');
-		if($hitokoto.length === 0) return;
-		const url = 'http://api.hitokoto.us/rand?length=80&encode=jsc&fun=handlerHitokoto';
-		$('body').append('<script	src="%s"></script>'.replace('%s',url));
-		window.handlerHitokoto = (data) => {
-			$hitokoto
-				.css('color','transparent')
-				.text(data.hitokoto)
-			if(data.source) $hitokoto.append('<cite> ——  %s</cite>'.replace('%s',data.source));
-			else if(data.author) $hitokoto.append('<cite> ——  %s</cite>'.replace('%s',data.author));
-			$hitokoto.css('color','white');
+		if ($hitokoto.length === 0) return;
+		if (BANNER_HITOKOTO) {
+			/*window.handlerHitokoto = (data) => {
+				$hitokoto
+					.css('color', 'transparent')
+					.text(data.hitokoto)
+				if (data.source) $hitokoto.append('<cite> ——  %s</cite>'.replace('%s', data.source));
+				else if (data.author) $hitokoto.append('<cite> ——  %s</cite>'.replace('%s', data.author));
+				$hitokoto.css('color', 'white');
+			}
+			const url = 'http://api.hitokoto.us/rand?length=80&encode=jsc&fun=handlerHitokoto';
+			$('body').append('<script src="%s"></script>'.replace('%s', url));*/
+			
+		} else {
+			$hitokoto.text(BANNER_TITLE);
 		}
 	}
 
@@ -174,11 +208,21 @@ var customSearch;
 		setTocToggle();
 		getHitokoto();
 		getPicture();
+
 		$(".article .video-container").fitVids();
 
-		setTimeout(function () {
+		setTimeout(function(){
 			$('#loading-bar-wrapper').fadeOut(500);
-		}, 300);
+		 $.getJSON("https://sslapi.hitokoto.cn/", function(data) {
+		 		const $hitokoto = $('#hitokoto');
+            $hitokoto
+					.css('color', 'transparent')
+					.text(data.hitokoto)
+				if (data.from) $hitokoto.append('<cite> ——  %s</cite>'.replace('%s', data.from));
+				else if (data.creator) $hitokoto.append('<cite> ——  %s</cite>'.replace('%s', data.creator));
+				$hitokoto.css('color', 'white');
+		 	});
+		},300);
 
 		if (SEARCH_SERVICE === 'google') {
 			customSearch = new GoogleCustomSearch({

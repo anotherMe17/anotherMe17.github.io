@@ -25,6 +25,7 @@
   <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
   <link href='//cdn.bootcss.com/node-waves/0.7.5/waves.min.css' rel='stylesheet'>
+  <script src="http://libs.baidu.com/jquery/1.4.2/jquery.min.js"></script>
   <link rel="stylesheet" href="/style.css">
   
   
@@ -69,12 +70,6 @@
 							</a>
 						</li>
 					
-						<li>
-							<a class='flat-box nav-resume' href='/Resume/Resume.html'>
-								Resume
-							</a>
-						</li>
-					
 				</ul>
 				<div class='underline'></div>
 			</div>
@@ -106,10 +101,6 @@
 				
 					<a href="/about" class="nav-about nav">
 						About
-					</a>
-				
-					<a href="/Resume/Resume.html" class="nav-resume nav">
-						Resume
 					</a>
 				
 			</nav>
@@ -148,25 +139,14 @@
 
   </section>
   <section class="article typo">
-	  <p>本文将介绍如何把你写的包发布到<a href="https://bintray.com/" target="_blank" rel="external">Bintray</a>上  </p>
+	  <p>本文将介绍如何把你写的包发布到<a href="https://bintray.com/">Bintray</a>上  </p>
 <p>注册账号和生成Maven库的步骤省略，过程比较简单可以自行上网百度</p>
 <h2 id="主项目的gradle的配置"><a href="#主项目的gradle的配置" class="headerlink" title="主项目的gradle的配置"></a>主项目的gradle的配置</h2><p>上传的插件用的是 com.novoda:bintray-release:0.3.4 </p>
-<p>如果项目中包含中文注释或中文字符，最好添加以下代码，不然中文注释的地方会报错导致编译不能通过。  </p>
-<pre><code>tasks.withType(Javadoc) {
-    options.addStringOption(&apos;Xdoclint:none&apos;, &apos;-quiet&apos;)
-    options.addStringOption(&apos;encoding&apos;, &apos;UTF-8&apos;)
-}
-</code></pre><p>Gradle整体配置</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">buildscript &#123;</div><div class="line">    repositories &#123;</div><div class="line">        jcenter()</div><div class="line">    &#125;</div><div class="line">    dependencies &#123;</div><div class="line">        classpath <span class="string">'com.android.tools.build:gradle:2.1.0'</span></div><div class="line">        classpath <span class="string">'com.novoda:bintray-release:0.3.4'</span></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">allprojects &#123;</div><div class="line">    repositories &#123;</div><div class="line">        jcenter()</div><div class="line">    &#125;</div><div class="line">    tasks.withType(Javadoc) &#123;</div><div class="line">        options.addStringOption(<span class="string">'Xdoclint:none'</span>, <span class="string">'-quiet'</span>)</div><div class="line">        options.addStringOption(<span class="string">'encoding'</span>, <span class="string">'UTF-8'</span>)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="function">task <span class="title">clean</span><span class="params">(type: Delete)</span> </span>&#123;</div><div class="line">    delete rootProject.buildDir</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="Module的Gradle配置"><a href="#Module的Gradle配置" class="headerlink" title="Module的Gradle配置"></a>Module的Gradle配置</h2><h3 id="添加插件"><a href="#添加插件" class="headerlink" title="添加插件"></a>添加插件</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">apply plugin: <span class="string">'maven'</span></div><div class="line">apply plugin: <span class="string">'com.novoda.bintray-release'</span></div></pre></td></tr></table></figure>
-<h3 id="添加注释"><a href="#添加注释" class="headerlink" title="添加注释"></a>添加注释</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">publish &#123;</div><div class="line">    userOrg = <span class="string">'anotherme17'</span><span class="comment">//bintray.com用户名</span></div><div class="line">    groupId = <span class="string">'com.anotherme17'</span><span class="comment">//jcenter上的路径</span></div><div class="line">    artifactId = <span class="string">'common-adapter'</span><span class="comment">//项目名称</span></div><div class="line">    publishVersion = <span class="string">'0.0.1'</span><span class="comment">//版本号</span></div><div class="line">    desc = <span class="string">'An CommonAdapter for ListView or RecyclerView'</span><span class="comment">//描述，不重要</span></div><div class="line">    website = <span class="string">'https://github.com/anotherMe17/CommonAdapterSample'</span></div><div class="line">    <span class="comment">//网站，不重要；尽量模拟github上的地址，例如我这样的；当然你有地址最好了</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="执行-上传"><a href="#执行-上传" class="headerlink" title="执行 上传"></a>执行 上传</h2><p>最后在控制台输入以下代码</p>
-<blockquote>
-<p>./gradlew clean build bintrayUpload<br> -PbintrayUser=xxxxxx<br> -PbintrayKey=xxxxxxxxxxxxxxxxxxxxxx<br> -PdryRun=false  </p>
-</blockquote>
-<p>PbintrayUser就是用户名，<br>PbintrayKey你的唯一key，<br>PdryRun是一个配置参数，当为true的时候，会运行所有的环节，但是不会上传</p>
 
-
+    
+	  <div class="readmore">
+      <a href="/2017/02/24/AndroidStudio发布一个项目到Jcenter/">Read More</a>
+    </div>
     
     
     
@@ -174,9 +154,9 @@
       
         <a href="/tags/AndroidStudio/">AndroidStudio</a>
       
-        <a href="/tags/实用技巧/">实用技巧</a>
-      
         <a href="/tags/JCenter/">JCenter</a>
+      
+        <a href="/tags/实用技巧/">实用技巧</a>
       
 	  </div>
     
@@ -211,29 +191,11 @@
 <p><img src="http://img.blog.csdn.net/20160429132644449" alt=""></p>
 <p>对一个对象的判空/非空语句写法</p>
 <p><img src="http://img.blog.csdn.net/20160429102024730" alt=""></p>
-<h3 id="自定义Live-Template"><a href="#自定义Live-Template" class="headerlink" title="自定义Live Template"></a>自定义Live Template</h3><p>Settings &gt; Editor &gt; Live Templates 进入<strong>Live Template</strong> 设置界面</p>
-<p><img src="http://img.blog.csdn.net/20160429102100735" alt=""></p>
-<p>创建一个自定义的Live Template</p>
-<p><img src="http://img.blog.csdn.net/20160429102118231" alt=""></p>
-<h2 id="File-Template"><a href="#File-Template" class="headerlink" title="File Template"></a>File Template</h2><p>File Template是在创建类时用到的模板，包括类的注释</p>
-<p>如图 <img src="http://img.blog.csdn.net/20160429102138435" alt=""></p>
-<h3 id="举个栗子"><a href="#举个栗子" class="headerlink" title="举个栗子"></a>举个栗子</h3><p>这里举个AndroidStudio自带的饿汉单例例子</p>
-<pre><code>#if (${PACKAGE_NAME} &amp;&amp; ${PACKAGE_NAME} != &quot;&quot;)package ${PACKAGE_NAME};#end
-#parse(&quot;File Header.java&quot;)
-public class ${NAME}{
-private static ${NAME} ourInstance = new ${NAME}();
 
-public static ${NAME} getInstance() {
-return ourInstance;
-}
-
-private ${NAME}() {
-}
-}
-</code></pre><h3 id="使用自己创建的模板"><a href="#使用自己创建的模板" class="headerlink" title="使用自己创建的模板"></a>使用自己创建的模板</h3><p>在创建类时可以选择自己新建的模板</p>
-<p><img src="http://img.blog.csdn.net/20160429102237517" alt=""></p>
-
-
+    
+	  <div class="readmore">
+      <a href="/2017/02/21/AndroidStudio模板/">Read More</a>
+    </div>
     
     
     
@@ -322,7 +284,7 @@ private ${NAME}() {
 	<div class="social-wrapper">
   	
       
-        <a href="https://github.com/anotherMe17" class="social github"
+        <a href="https://github.com/xxxx" class="social github"
           target="_blank" rel="external">
           <span class="icon icon-github"></span>
         </a>
@@ -341,7 +303,6 @@ private ${NAME}() {
   </div>
   
   <div>Theme <a href='https://github.com/stkevintan/hexo-theme-material-flow' class="codename">MaterialFlow</a> designed by <a href="http://keyin.me/" target="_blank">Kevin Tan</a>.</div>
-  
 </footer>
 
 
@@ -377,6 +338,11 @@ private ${NAME}() {
   var SEARCH_SERVICE = "hexo";
   var ROOT = "/"||"/";
   if(!ROOT.endsWith('/'))ROOT += '/';
+  var BANNER_IMAGE = "true" == "true";
+  var BANNER_HITOKOTO = "true" == "true";
+  var BANNER_TITLE = "AnotherMe17"||"AnotherMe17";
+  var BANNER_CUSTOMIMAGE = "false" == "true";
+  var BANNER_IMAGELIST = "/images/avatar.png".split(',');
 </script>
 <script src="/js/search.js"></script>
 <script src="/js/app.js"></script>
