@@ -23,29 +23,17 @@
 <ul>
 <li><a href="http://blog.csdn.net/pkaq_/article/details/53906668" target="_blank" rel="external">依赖,管理依赖的版本</a> </li>
 </ul>
-<h2 id="ViewPager-Indicator"><a href="#ViewPager-Indicator" class="headerlink" title="ViewPager Indicator"></a>ViewPager Indicator</h2><p>Github</p>
-<ul>
-<li><a href="https://github.com/hackware1993/MagicIndicator" target="_blank" rel="external">MagicIndicator</a></li>
-</ul>
-<h2 id="路由跳转框架"><a href="#路由跳转框架" class="headerlink" title="路由跳转框架"></a>路由跳转框架</h2><p>Github</p>
-<ul>
-<li><a href="https://github.com/alibaba/ARouter" target="_blank" rel="external">ARouter</a> 阿里的路由跳转框架</li>
-</ul>
-<h2 id="上拉刷新-下拉加载"><a href="#上拉刷新-下拉加载" class="headerlink" title="上拉刷新,下拉加载"></a>上拉刷新,下拉加载</h2><p>Github</p>
-<ul>
-<li><a href="https://github.com/bingoogolapple/BGARefreshLayout-Android" target="_blank" rel="external">BGARefreshLayout-Android</a></li>
-</ul>
+<h2 id="UI"><a href="#UI" class="headerlink" title="UI"></a>UI</h2><p><a href="https://github.com/H07000223/FlycoSystemBar" target="_blank" rel="external">FlycoSystemBar</a>状态栏  </p>
+<p><a href="https://github.com/bingoogolapple/BGARefreshLayout-Android" target="_blank" rel="external">BGARefreshLayout-Android</a>上拉刷新下拉加载框架  </p>
+<p><a href="https://github.com/hackware1993/MagicIndicator" target="_blank" rel="external">MagicIndicator</a>ViewPager Indicator  </p>
 <h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>文章</p>
 <ul>
 <li><a href="https://juejin.im/post/590ec7beda2f600053556598" target="_blank" rel="external">利用递归算法、堆栈打造一个android可擦除思维导图</a></li>
 </ul>
 <h2 id="框架"><a href="#框架" class="headerlink" title="框架"></a>框架</h2><p>Github</p>
 <ul>
-<li><a href="https://github.com/JessYanCoding/MVPArms" target="_blank" rel="external">MVPArms</a></li>
-</ul>
-<h2 id="状态栏"><a href="#状态栏" class="headerlink" title="状态栏"></a>状态栏</h2><p>Github</p>
-<ul>
-<li><a href="https://github.com/H07000223/FlycoSystemBar" target="_blank" rel="external">FlycoSystemBar</a></li>
+<li><a href="https://github.com/JessYanCoding/MVPArms" target="_blank" rel="external">MVPArms</a>MVP框架</li>
+<li><a href="https://github.com/alibaba/ARouter" target="_blank" rel="external">ARouter</a> 阿里的路由跳转框架</li>
 </ul>
 ]]></content>
       
@@ -101,9 +89,9 @@
             
             <tag> AndroidStudio </tag>
             
-            <tag> 实用技巧 </tag>
-            
             <tag> JCenter </tag>
+            
+            <tag> 实用技巧 </tag>
             
         </tags>
         
