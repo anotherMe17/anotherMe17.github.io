@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://anotherme17.github.io/"/>
-  <updated>2017-04-18T13:30:06.712Z</updated>
+  <updated>2017-05-08T03:35:05.060Z</updated>
   <id>https://anotherme17.github.io/</id>
   
   <author>
@@ -14,6 +14,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Adnroid 干货收藏</title>
+    <link href="https://anotherme17.github.io/2017/05/08/Android%E6%94%B6%E8%97%8F/"/>
+    <id>https://anotherme17.github.io/2017/05/08/Android收藏/</id>
+    <published>2017-05-08T03:10:54.000Z</published>
+    <updated>2017-05-08T03:35:05.060Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;收集了一些工作和学习中遇到的一些好的Android第三方库和文章.&lt;br&gt;持续更新中:trollface:&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="收藏" scheme="https://anotherme17.github.io/categories/%E6%94%B6%E8%97%8F/"/>
+    
+    
+      <category term="Android" scheme="https://anotherme17.github.io/tags/Android/"/>
+    
+      <category term="收藏" scheme="https://anotherme17.github.io/tags/%E6%94%B6%E8%97%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>AndroidStudio发布项目到JCenter</title>
@@ -46,11 +68,15 @@
     <link href="https://anotherme17.github.io/2017/02/21/SharedPreferences/"/>
     <id>https://anotherme17.github.io/2017/02/21/SharedPreferences/</id>
     <published>2017-02-21T14:26:34.000Z</published>
-    <updated>2017-02-21T14:32:54.012Z</updated>
+    <updated>2017-05-08T03:36:03.234Z</updated>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;获取SharedPreferences&quot;&gt;&lt;a href=&quot;#获取SharedPreferences&quot; class=&quot;headerlink&quot; title=&quot;获取SharedPreferences&quot;&gt;&lt;/a&gt;获取SharedPreferences&lt;/h2&gt;&lt;p&gt;获取
+      &lt;h2 id=&quot;获取SharedPreferences&quot;&gt;&lt;a href=&quot;#获取SharedPreferences&quot; class=&quot;headerlink&quot; title=&quot;获取SharedPreferences&quot;&gt;&lt;/a&gt;获取SharedPreferences&lt;/h2&gt;&lt;p&gt;获取SharedPreferences有两种方式:&lt;/p&gt;
+&lt;p&gt;1 调用Context对象的getSharedPreferences()方法&lt;br&gt;2 调用Activity对象的getPreferences()方法&lt;/p&gt;
+&lt;p&gt;两种方式的区别:&lt;/p&gt;
+&lt;p&gt;调用Context对象的getSharedPreferences()方法获得的SharedPreferences对象可以被同一应用程序下的其他组件共享.&lt;/p&gt;
+&lt;p&gt;调用Activity对象的getPreferences()方法获得的SharedPreferences对象只能在该Activity中使用.&lt;/p&gt;
     
     </summary>
     
